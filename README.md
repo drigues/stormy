@@ -12,7 +12,7 @@ Structural homepage for a wordpress theme using:
 
 - Structural html tags: 2 hours
 - Including bootstrap tags desktop/mobile: 2 hours
-- Style page globaly: 4 hours
+- Style page globaly desktop/mobile: 6 hours
 
 ## Layout image
 
