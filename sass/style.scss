@@ -27,28 +27,24 @@ p {color: $sec;}
 .layer-2, .layer-6{ background-color: $pri;}
 .layer-9{ background-color: $sec;}
 
-.content-2{
-    padding: 40px 0;
 
-    p {color: white;}
-
-    & .right-side { background: #fff;}
-}
 
 .content-1, .content-2, .box-group,.content-6, .content-8{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .container-fluid{ padding: 0; }
 
-.content-1 > div, .content-6 > div{
-    width: 50%;
+.content-1 > div, .content-6 > div, .content-2 > div{
+    width: 45%;
 }
 
 
 
 
-/* SECTON 1 */
+/* NAVBAR */
 .navbar{ 
     display: flex;
     justify-content: space-between;
@@ -106,5 +102,19 @@ p {color: $sec;}
     }
 }
 
+/* SECTON 2 */
+.layer-2{
+    & .content-2{
+        padding: 40px 0;
+    }
+    
+    & p {color: white;}
+
+    & .right-side {
+        background: #fff;
+        border-radius: 5px;
+        padding: 30px 20px 20px;
+    }
+}
 
 
