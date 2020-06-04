@@ -2,49 +2,124 @@ $pri:#1F274C;
 $sec:#4D4D4D;
 $ter:#E54717;
 
+@mixin before-after{
+    content: "";
+    display: block;
+}
+
+/***/
+
+html, body {
+    scroll-behavior: smooth;
+}
+
 h1, h2, h3, h4{
     color: $pri;
     font-size: 20px;
 }
 
-p {color: $sec;}
+h4{
+    text-transform: uppercase;
 
-.go-layer{ margin: 80px auto;}
+    &::after {
+        @include before-after;
+        width: 60px;
+        border-bottom: 1px solid $pri;
+        text-align: center;
+        margin: 5px auto 0;
+    }
+}
+
+
+p {color: $sec;}
 
 .color-pri{color: $pri !important;}
 .color-sec{color: $sec !important;}
 .color-ter{color: $ter !important;}
 
-
-
-
-
-.go-content div img{
-    max-width: 300px;
-    height: auto;
+.right-side, .left-side{
+    width:40%;
+    margin:auto;
 }
 
-.layer-2, .layer-6{ background-color: $pri;}
-.layer-9{ background-color: $sec;}
 
+/* general */
 
+.go-layer{
+    padding: 80px 0;
+    margin: auto;
+}
 
-.content-1, .content-2, .box-group,.content-6, .content-8{
+.go-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    & .title-group{
+        font-weight: bold;
+        color: $pri;
+        font-size: 1em;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 20px auto 10px;
+    }
+
+    & .box-group p {
+        font-weight: lighter;
+        font-size: .8em;
+        text-align: center;
+        max-width: 310px;
+    }
+
+    & div img{
+        max-width: 300px;
+        height: auto;
+    }
 }
+
+
+/* bootstrap */
 
 .container-fluid{ padding: 0; }
 
-.content-1 > div, .content-6 > div, .content-2 > div{
-    width: 45%;
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 
+// .layer-2, .layer-6{ background-color: $pri;}
+// .layer-9{ background-color: $sec;}
+
+
+
+// .content-1, .content-2, .box-group,.content-6, .content-8{
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+
+// 
+
+// .content-1 > div, .content-6 > div, .content-2 > div{
+//     width: 45%;
+// }
 
 
 /* NAVBAR */
+.logo-main {
+    width: 150px;
+    height: auto;
+
+    & svg{
+        width: 100%;
+        fill:$pri;
+    }
+        & *{
+            fill:$pri;
+        }
+}
+
 .navbar{ 
     display: flex;
     justify-content: space-between;
@@ -65,6 +140,9 @@ p {color: $sec;}
         }
     }
 }
+
+
+
 
 /* SECTON 1 */
 .layer-1{
@@ -104,6 +182,26 @@ p {color: $sec;}
 
 /* SECTON 2 */
 .layer-2{
+    background-color: $pri;
+
+    & h3{
+        color: $ter;
+        font-size: 1.15rem;
+    } 
+
+    & ul{
+        margin-bottom: 0;
+
+        li {
+            font-weight: lighter;
+            font-size: .95rem;
+
+            &::marker {
+                color: $ter;
+            }
+        }
+    }
+
     & .content-2{
         padding: 40px 0;
     }
@@ -112,9 +210,184 @@ p {color: $sec;}
 
     & .right-side {
         background: #fff;
-        border-radius: 5px;
-        padding: 30px 20px 20px;
+        border-radius: 0 5px;
+        padding: 30px;
+    }
+}
+
+/* SECTON 3 */
+.layer-3{
+
+    h4 {
+        margin-bottom: 30px;
+    }
+
+    // &::after{ 
+    //     box-shadow: 0px 30px 30px 0px #F4F4F4;
+    //     @include before-after;
+    //     width: 100%;
+    //     height: 40px;
+    // }
+
+    .content-3{
+        flex-direction: column;
+
+        & .box-group{
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            & div img {
+                max-width: 200px;
+                max-height: 120px;
+                margin: auto;
+                display: block;
+            }
+        }
+
+    }
+    
+}
+
+
+/* SECTON 4 - 5 */
+.layer-4, .layer-5{
+    
+    padding: 80px 0 20px 0;
+
+    h4 {
+        margin-bottom: 50px;
+    }
+
+    .content-4, .content-5{
+        flex-direction: column;
+    }
+
+    & .box-group{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .left-bar.carac-box{
+            width: 260px;
+            border-radius: 0 5px;
+            border-left: 20px solid $pri;
+            box-shadow: 0px 0px 10px 5px #f1f1f1;
+            padding: 0 25px;
+            margin-bottom: 30px;
+        }
+
+        & .right-side{
+            width: 30%;
+        }
+
+        & .left-side {
+            width: 40%;
+        }
+
+        & .title-group { 
+            text-align: left; 
+            text-transform: unset;
+            margin: 10px 0;
+        }
+
+        & p { text-align: left;}
+
+        & .right-side, .left-side{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+
+    & div img {
+        max-width: 450px;
+    }
+
+}
+
+.layer-5{ padding: 20px 0 80px 0; }
+
+.content-5 .box-group{
+    flex-direction:row-reverse;
+}
+
+/* SECTON 6 */
+.layer-6{
+
+    h4 {
+        margin-bottom: 50px;
+    }
+
+    .content-6{
+        flex-direction: column;
+    }
+
+    & .box-group{
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
 
+
+
+/**************/
+
+@media only screen and (max-width: 1000px) {
+    .container, .container-md, .container-sm {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+
+    .right-side, .left-side {
+        width: 80%;
+        max-width: 460px;
+    }
+
+    .content-1 {
+        flex-direction: column-reverse;
+
+        & h1 {
+            text-align: center;
+        }
+
+        & .right-side .block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .layer-2 {
+        padding: 40px 0;
+
+        & .content-2 {
+            flex-direction: column;
+        }
+    
+        & .right-side, & .left-side {
+            margin: 20px auto;
+        }
+    }
+    
+
+}
+
+@media only screen and (max-width: 560px) {
+    .layer-1 div img {
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    
+    
+}
