@@ -7,6 +7,12 @@ $ter:#E54717;
     display: block;
 }
 
+@mixin box-effect{
+    border-radius: 0 5px;
+    box-shadow: 0 0px 20px -10px $pri;
+}
+
+
 /***/
 
 html, body {
@@ -29,7 +35,7 @@ h4{
 
     &::after {
         @include before-after;
-        width: 60px;
+        width: 50px;
         border-bottom: 1px solid $pri;
         text-align: center;
         margin: 5px auto 0;
@@ -61,7 +67,7 @@ p {color: $sec;}
     justify-content: space-between;
     align-items: center;
 
-    & .title-group{
+    .title-group{
         font-weight: bold;
         color: $pri;
         font-size: 1em;
@@ -70,14 +76,14 @@ p {color: $sec;}
         margin: 20px auto 10px;
     }
 
-    & .box-group p {
+    .box-group p {
         font-weight: lighter;
         font-size: .8em;
         text-align: center;
         max-width: 310px;
     }
 
-    & div img{
+    div img{
         max-width: 300px;
         height: auto;
     }
@@ -94,36 +100,20 @@ p {color: $sec;}
 }
 
 
-// .layer-2, .layer-6{ background-color: $pri;}
-// .layer-9{ background-color: $sec;}
-
-
-
-// .content-1, .content-2, .box-group,.content-6, .content-8{
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
-
-// 
-
-// .content-1 > div, .content-6 > div, .content-2 > div{
-//     width: 45%;
-// }
-
-
 /* NAVBAR */
 .logo-main {
     width: 150px;
     height: auto;
 
-    & svg{
+    svg{
         width: 100%;
         fill:$pri;
-    }
-        & *{
+        
+        *{
             fill:$pri;
         }
+    }
+        
 }
 
 .navbar{ 
@@ -132,12 +122,12 @@ p {color: $sec;}
     align-items: center;
     padding:20px 50px;
     
-    & > * {
+    > * {
         flex-grow: 0;
         align-self: center;
     }
 
-    & a.nav-link {
+    a.nav-link {
         font-weight: normal;
         color: $sec !important;
         
@@ -152,13 +142,13 @@ p {color: $sec;}
 
 /* SECTON 1 */
 .layer-1{
-    & h1{
+    h1{
         max-width: 320px;
         font-size: 40px;
         font-weight: bold;
     }
 
-    & .btn-primary{
+    .btn-primary{
         background-color: $pri;
         border-color: $pri;
 
@@ -168,19 +158,19 @@ p {color: $sec;}
         }
     }
 
-    & div img {
-        max-width: 400px;
+    div img {
+        max-width: 100%;
         height: auto;
         margin: auto;
         display: block;
     }
 
-    & .right-side {
+    .right-side {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        & .block{  
+        .block{  
             align-self: auto;
         }
     }
@@ -190,12 +180,12 @@ p {color: $sec;}
 .layer-2{
     background-color: $pri;
 
-    & h3{
+    h3{
         color: $ter;
         font-size: 1.15rem;
     } 
 
-    & ul{
+    ul{
         margin-bottom: 0;
 
         li {
@@ -208,13 +198,13 @@ p {color: $sec;}
         }
     }
 
-    & .content-2{
+    .content-2{
         padding: 40px 0;
     }
     
-    & p {color: white;}
+    p {color: white;}
 
-    & .right-side {
+    .right-side {
         background: #fff;
         border-radius: 0 5px;
         padding: 30px;
@@ -233,13 +223,13 @@ p {color: $sec;}
     .content-3{
         flex-direction: column;
 
-        & .box-group{
+        .box-group{
             width: 90%;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
 
-            & div img {
+            div img {
                 max-width: 200px;
                 max-height: 120px;
                 margin: auto;
@@ -265,7 +255,7 @@ p {color: $sec;}
         flex-direction: column;
     }
 
-    & .box-group{
+    .box-group{
         width: 90%;
         display: flex;
         flex-direction: row;
@@ -273,30 +263,29 @@ p {color: $sec;}
 
         .left-bar.carac-box{
             width: 280px;
-            border-radius: 0 5px;
             border-left: 20px solid $pri;
-            box-shadow: 0px 0px 10px 5px #f1f1f1;
             padding: 0 25px;
             margin-bottom: 30px;
+            @include box-effect;
         }
 
-        & .right-side{
+        .right-side{
             width: 280px;
         }
 
-        & .left-side {
+        .left-side {
             width: calc(90% - 280px);
         }
 
-        & .title-group { 
+        .title-group { 
             text-align: left; 
             text-transform: unset;
             margin: 10px 0;
         }
 
-        & p { text-align: left;}
+        p { text-align: left;}
 
-        & .right-side, .left-side{
+        .right-side, .left-side{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -304,7 +293,7 @@ p {color: $sec;}
         }
     }
 
-    & div img {
+    div img {
         max-width: 100%;
     }
 
@@ -316,8 +305,11 @@ p {color: $sec;}
     flex-direction:row-reverse;
 }
 
+
 /* SECTON 6 */
 .layer-6{
+    padding: 0 0 80px 0;
+    background: linear-gradient(#fff 0%, #fff 40%, #1F274C 0%);
 
     h4 {
         margin-bottom: 50px;
@@ -327,24 +319,187 @@ p {color: $sec;}
         flex-direction: column;
     }
 
-    & .box-group{
-        width: 90%;
+    .box-group{
+        width: 65%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        background: #fff;
+        @include box-effect;
+        
+        .right-side{
+            width: calc(100% - 300px);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 30px;
+
+            div img{
+                max-width: 100px;
+            }
+        }
+
+        .left-side {
+            width: 300px;
+        }
+
+        p { 
+            text-align: left;
+            max-width: 95%;
+
+            &.name.dep{
+                font-size: 1em;
+                font-weight: bold;
+            }
+            .title.dep{
+                display: block;
+                font-size: .7em;
+                font-weight: lighter;
+            }
+        }
+        
     }
 }
 
 
 /* SECTON 7 */
 .layer-7{
-    & .content-7{
+    .content-7{
         flex-direction: column;
         justify-content: center;
     }
 
-    & div img {
+    div img {
         max-width: 150px;
+    }
+}
+
+/* SECTON 8 */
+.layer-8{
+
+    padding: 20px 0 80px 0;
+
+    .content-8{
+        align-items: flex-start;
+    }
+
+    .left-side {
+        width: 35%;
+    }
+
+    .right-side{
+        width: 50%;
+        @include box-effect;
+        padding: 40px;
+        background: #fff;
+    }
+
+    .two{
+        display: flex;
+        flex-direction: row;    
+        justify-content: space-between;
+
+        & > * {
+            width: 48%;
+        }
+    }
+
+    form {
+
+        input, textarea{
+            color: $pri;
+            border-radius: 0;
+            border: 0;
+            border-bottom: 2px solid $pri;
+        }
+
+        .btn-primary{
+            width: 100%;
+            text-transform: uppercase;
+            background-color: $pri;
+            border-color: $pri;
+    
+            &:hover{
+                background-color: $ter;
+                border-color: $ter;
+            }
+        }
+        
+        input.form-control:focus, textarea.form-control:focus {
+            color: $pri;
+            border-color: $ter;
+            box-shadow: 0 0 0 !important;
+        }
+
+    }
+
+}
+
+
+/* SECTON 9 */
+.layer-9{
+    background: $sec;
+
+    .content-9{
+        flex-direction: column;
+    }
+
+    .footer-link {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .logo-footer{
+        width: 170px;
+        padding-top: 3px;
+
+        svg{
+            width: 100%;
+        }
+    }
+    
+    .copyright{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        font-size: .7em;
+        color: #A0A0A0;
+        margin-top: 10px;
+        padding-top:10px;
+        border-top: 1px solid #A0A0A0;
+
+        a {
+            color: #A0A0A0 !important;
+            
+            &:hover, :active {
+                color: #ddd !important;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 0;
+
+        a.nav-link{
+            color: #fff !important;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+
+            &.last{
+                padding-right: 0;
+            }
+            
+            &:hover, :active {
+                color: #ddd !important;
+            }
+        }
     }
 }
 
@@ -357,9 +512,40 @@ p {color: $sec;}
     .container, .container-md, .container-sm {
         max-width: 100%;
     }
+
+    .link-footer {
+        text-align: center;
+    }
+
+
+    .layer-6 {
+
+        .box-group{
+            width: 80%;
+
+            .left-side {
+                width: 45%;
+            }
+    
+            .right-side {
+                width: 55%;
+            }
+    
+            div img {
+                max-width: 100%;
+            }
+        }
+
+    }
 }
 
 @media only screen and (max-width: 780px) {
+
+    .header{
+        .nav-item {
+            align-self: end;
+        }
+    }
 
     .right-side, .left-side {
         width: 80%;
@@ -369,11 +555,11 @@ p {color: $sec;}
     .content-1 {
         flex-direction: column-reverse;
 
-        & h1 {
+        h1 {
             text-align: center;
         }
 
-        & .right-side .block {
+        .right-side .block {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -383,11 +569,11 @@ p {color: $sec;}
     .layer-2 {
         padding: 40px 0;
 
-        & .content-2 {
+        .content-2 {
             flex-direction: column;
         }
     
-        & .right-side, & .left-side {
+        .right-side, .left-side {
             margin: 20px auto;
         }
     }
@@ -396,11 +582,11 @@ p {color: $sec;}
     .layer-3 .content-3 .box-group {
         flex-direction: column;
 
-        & p {
+        p {
             margin: 0 auto 40px;
         }
 
-        & div:last-child p {
+        div:last-child p {
             margin: 0 auto 0;
         }
     }
@@ -412,7 +598,44 @@ p {color: $sec;}
     .layer-4 .box-group .left-side, .layer-5 .box-group .left-side {
         width: 90%;
     }
+
+    .layer-6 {
+        background: linear-gradient(#fff 0%, #fff 30%, #1F274C 0%);
+
+        .box-group {
+            max-width: 400px;
+            flex-direction: column;
     
+            .left-side {
+                width: 100%;
+                height: 300px;
+            }
+    
+            .right-side{
+                width: 100%;
+                background: #fff;
+    
+                div img {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+    }
+
+    .layer-8 .content-8 {
+        flex-direction: column;
+
+        .left-side{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .right-side {
+            width: 100%;
+        }
+    }
 
 }
 
@@ -420,9 +643,39 @@ p {color: $sec;}
     .layer-1 div img {
         max-width: 300px;
     }
-}
 
-@media only screen and (max-width: 380px) {
+    .layer-9{
+        padding: 60px 0;
 
+        .navbar {
+            flex-direction: column;
+
+                a.nav-link {
+                text-align: center;
+            }
+
+            .link-footer{
+                margin: 20px 0;
+            }
+
+            a.nav-link.last{
+                padding-right: 1.5rem;
+            }
+
+        }
+
+        .copyright {
+            align-items: center;
+            flex-direction: column;
+        }
+
+    }
+
+    .layer-8 .content-8 .right-side {
+        .two > * {
+            width: 100px;
+            display: block;
+        }
+    }
     
 }
