@@ -70,14 +70,16 @@ p {
   padding-right: 1rem;
   padding-left: 1rem; }
 
-/* NAVBAR */
-.logo-main {
+/* HEADER */
+.header .bg-light {
+  background-color: #fff !important; }
+.header .logo-main {
   width: 150px;
   height: auto; }
-  .logo-main svg {
+  .header .logo-main svg {
     width: 100%;
     fill: #1F274C; }
-    .logo-main svg * {
+    .header .logo-main svg * {
       fill: #1F274C; }
 
 .navbar {
@@ -95,27 +97,29 @@ p {
       color: #E54717 !important; }
 
 /* SECTON 1 */
-.layer-1 h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: bold; }
-.layer-1 .btn-primary {
-  background-color: #1F274C;
-  border-color: #1F274C; }
-  .layer-1 .btn-primary:hover {
-    background-color: #E54717;
-    border-color: #E54717; }
-.layer-1 div img {
-  max-width: 100%;
-  height: auto;
-  margin: auto;
-  display: block; }
-.layer-1 .right-side {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .layer-1 .right-side .block {
-    align-self: auto; }
+.layer-1 {
+  padding: 90px 0; }
+  .layer-1 h1 {
+    max-width: 320px;
+    font-size: 40px;
+    font-weight: bold; }
+  .layer-1 .btn-primary {
+    background-color: #1F274C;
+    border-color: #1F274C; }
+    .layer-1 .btn-primary:hover {
+      background-color: #E54717;
+      border-color: #E54717; }
+  .layer-1 div img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: block; }
+  .layer-1 .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .layer-1 .right-side .block {
+      align-self: auto; }
 
 /* SECTON 2 */
 .layer-2 {
@@ -343,7 +347,7 @@ p {
       max-width: 100%; } }
 @media only screen and (max-width: 780px) {
   .header .nav-item {
-    align-self: end; }
+    align-self: flex-end; }
 
   .right-side, .left-side {
     width: 80%;
@@ -395,11 +399,11 @@ p {
   .layer-8 .content-8 {
     flex-direction: column; }
     .layer-8 .content-8 .left-side {
-      width: 100%;
+      width: 90%;
       text-align: center;
       margin-bottom: 30px; }
     .layer-8 .content-8 .right-side {
-      width: 100%; } }
+      width: 90%; } }
 @media only screen and (max-width: 560px) {
   .layer-1 div img {
     max-width: 300px; }
@@ -418,8 +422,11 @@ p {
       align-items: center;
       flex-direction: column; }
 
+  .layer-8 .content-8 .right-side .two {
+    flex-direction: column; }
+    .layer-8 .content-8 .right-side .two input:first-child {
+      margin-bottom: 1rem; }
   .layer-8 .content-8 .right-side .two > * {
-    width: 100px;
-    display: block; } }
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

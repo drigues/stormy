@@ -15,6 +15,7 @@ $ter:#E54717;
 
 /***/
 
+
 html, body {
     scroll-behavior: smooth;
 }
@@ -56,7 +57,6 @@ p {color: $sec;}
 
 
 /* general */
-
 .go-layer{
     padding: 80px 0;
     margin: auto;
@@ -91,7 +91,6 @@ p {color: $sec;}
 
 
 /* bootstrap */
-
 .container-fluid{ padding: 0; }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -100,20 +99,27 @@ p {color: $sec;}
 }
 
 
-/* NAVBAR */
-.logo-main {
-    width: 150px;
-    height: auto;
 
-    svg{
-        width: 100%;
-        fill:$pri;
-        
-        *{
-            fill:$pri;
-        }
+/* HEADER */
+.header{
+    .bg-light {
+        background-color: #fff!important;
     }
-        
+
+    .logo-main {
+        width: 150px;
+        height: auto;
+    
+        svg{
+            width: 100%;
+            fill:$pri;
+            
+            *{
+                fill:$pri;
+            }
+        }
+            
+    }
 }
 
 .navbar{ 
@@ -139,9 +145,10 @@ p {color: $sec;}
 
 
 
-
 /* SECTON 1 */
 .layer-1{
+    padding: 90px 0;
+
     h1{
         max-width: 320px;
         font-size: 40px;
@@ -175,6 +182,7 @@ p {color: $sec;}
         }
     }
 }
+
 
 /* SECTON 2 */
 .layer-2{
@@ -210,6 +218,7 @@ p {color: $sec;}
         padding: 30px;
     }
 }
+
 
 /* SECTON 3 */
 .layer-3{
@@ -376,6 +385,7 @@ p {color: $sec;}
     }
 }
 
+
 /* SECTON 8 */
 .layer-8{
 
@@ -504,9 +514,8 @@ p {color: $sec;}
 }
 
 
-
-
 /**************/
+
 
 @media only screen and (max-width: 1000px) {
     .container, .container-md, .container-sm {
@@ -543,7 +552,7 @@ p {color: $sec;}
 
     .header{
         .nav-item {
-            align-self: end;
+            align-self: flex-end;
         }
     }
 
@@ -627,13 +636,13 @@ p {color: $sec;}
         flex-direction: column;
 
         .left-side{
-            width: 100%;
+            width: 90%;
             text-align: center;
             margin-bottom: 30px;
         }
 
         .right-side {
-            width: 100%;
+            width: 90%;
         }
     }
 
@@ -672,9 +681,16 @@ p {color: $sec;}
     }
 
     .layer-8 .content-8 .right-side {
+        .two {
+            flex-direction: column;
+
+            & input:first-child{
+                margin-bottom: 1rem;
+            }
+        }
+
         .two > * {
-            width: 100px;
-            display: block;
+            width: 100%;
         }
     }
     
